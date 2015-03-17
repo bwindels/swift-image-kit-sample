@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F791AFD1AB5E8590092B3A8 /* ImageBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F791AFC1AB5E8590092B3A8 /* ImageBrowserController.swift */; };
+		0F791AFF1AB5E8A80092B3A8 /* DirectoryImagesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F791AFE1AB5E8A80092B3A8 /* DirectoryImagesSource.swift */; };
+		0F96F2541AB8F24D00B2B18A /* foo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F96F2531AB8F24D00B2B18A /* foo.xib */; };
 		0FF580B31AB39FEF000A5348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF580B21AB39FEF000A5348 /* AppDelegate.swift */; };
 		0FF580B51AB39FEF000A5348 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF580B41AB39FEF000A5348 /* Images.xcassets */; };
 		0FF580B81AB39FEF000A5348 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF580B61AB39FEF000A5348 /* MainMenu.xib */; };
@@ -24,6 +27,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F791AFC1AB5E8590092B3A8 /* ImageBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBrowserController.swift; sourceTree = "<group>"; };
+		0F791AFE1AB5E8A80092B3A8 /* DirectoryImagesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryImagesSource.swift; sourceTree = "<group>"; };
+		0F791B001AB5FFB90092B3A8 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		0F791B021AB5FFEA0092B3A8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0F96F2531AB8F24D00B2B18A /* foo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = foo.xib; sourceTree = "<group>"; };
 		0FF580AD1AB39FEF000A5348 /* pictures2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictures2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF580B11AB39FEF000A5348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF580B21AB39FEF000A5348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +63,11 @@
 		0FF580A41AB39FEF000A5348 = {
 			isa = PBXGroup;
 			children = (
+				0F96F2531AB8F24D00B2B18A /* foo.xib */,
+				0F791B021AB5FFEA0092B3A8 /* Cocoa.framework */,
+				0F791B001AB5FFB90092B3A8 /* Quartz.framework */,
+				0F791AFE1AB5E8A80092B3A8 /* DirectoryImagesSource.swift */,
+				0F791AFC1AB5E8590092B3A8 /* ImageBrowserController.swift */,
 				0FF580AF1AB39FEF000A5348 /* pictures2 */,
 				0FF580C01AB39FEF000A5348 /* pictures2Tests */,
 				0FF580AE1AB39FEF000A5348 /* Products */,
@@ -186,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F96F2541AB8F24D00B2B18A /* foo.xib in Resources */,
 				0FF580B51AB39FEF000A5348 /* Images.xcassets in Resources */,
 				0FF580B81AB39FEF000A5348 /* MainMenu.xib in Resources */,
 			);
@@ -205,6 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F791AFD1AB5E8590092B3A8 /* ImageBrowserController.swift in Sources */,
+				0F791AFF1AB5E8A80092B3A8 /* DirectoryImagesSource.swift in Sources */,
 				0FF580B31AB39FEF000A5348 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +292,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.10;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -312,7 +328,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.10;
 			};
 			name = Release;
 		};
@@ -323,6 +339,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = pictures2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -334,6 +351,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = pictures2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -393,6 +411,7 @@
 				0FF580C91AB39FEF000A5348 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0FF580CA1AB39FEF000A5348 /* Build configuration list for PBXNativeTarget "pictures2Tests" */ = {
 			isa = XCConfigurationList;
@@ -401,6 +420,7 @@
 				0FF580CC1AB39FEF000A5348 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
