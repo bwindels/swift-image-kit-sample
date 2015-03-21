@@ -8,23 +8,51 @@
 
 import Foundation
 
-class DirectoryImagesSource {
+class DirectoryPhoto: Photo {
+    let path: String
+    var data: NSData?
+    
+    init(path: String) {
+        self.path = path
+    }
+
+    func thumbnailData() -> NSData {
+        if let loadedData = data {
+            return loadedData
+        }
+        else {
+            data = NSData(contentsOfFile: path)
+            return data!
+        }
+    }
+    
+    func title() -> String {
+        return path
+    }
+    
+    func UID() -> String {
+        return path
+    }
+}
+
+class DirectoryPhotoCollection: PhotoCollection {
     
     let extensions = [".jpg", ".jpeg"];
     let rootDirectory: String
     var enumerator: NSDirectoryEnumerator?
     var cachedCount: UInt64?
-    var currentOffset: UInt64 = 0
+    var currentOffset: Int64 = 0
+    var _currentPhoto: Photo?
     
     init(rootDirectory: String) {
         self.rootDirectory = rootDirectory
     }
     
-    func imageCount() -> UInt64 {
+    func count() -> UInt64 {
         if cachedCount == nil {
             reset()
             var count:UInt64 = 0
-            iterateTree({ (_: String) -> Bool in
+            continueTreeIteration({ (_: String) -> Bool in
                 ++count
                 return true
             })
@@ -33,46 +61,51 @@ class DirectoryImagesSource {
         return cachedCount!
     }
     
-    func seekTo(offset: UInt64) {
+    func seekTo(offset: Int64) {
         if currentOffset != offset {
             if currentOffset > offset {
                 reset()
             }
             if offset > 0 {
-                iterateTree({ (_: String) -> Bool in
+                continueTreeIteration({ (_: String) -> Bool in
                     return (self.currentOffset + 1) < offset
                 })
             }
         }
     }
+    
+    func currentPhoto() -> Photo? {
+        return _currentPhoto
+    }
 
-    func nextImage() -> String? {
+    func nextPhoto() -> Photo? {
         if enumerator == nil {
             reset()
         }
-        var imagePath: String?
-        iterateTree({
-            (path: String) -> Bool in
-            imagePath = path
+        continueTreeIteration({ (path: String) -> Bool in
             return false
         })
-        return imagePath
+        return _currentPhoto
     }
     
     private func reset() {
-        currentOffset = 0
+        currentOffset = -1
         enumerator = NSFileManager.defaultManager().enumeratorAtPath(rootDirectory)
     }
     
-    private func iterateTree(closure: (String) -> Bool) {
+    private func continueTreeIteration(closure: (String) -> Bool) {
         var resume = true
         while resume {
             if let nextValue: AnyObject? = enumerator?.nextObject() {
                 if let path = nextValue as? String {
                     if path.lowercaseString.hasSuffix(".jpg") {
+                        let currentPath = rootDirectory + "/" + path
+                        _currentPhoto = DirectoryPhoto(path: currentPath)
+                        ++currentOffset
                         resume = closure(path)
                     }
                 }
+                //no more files
                 else {
                     resume = false
                 }

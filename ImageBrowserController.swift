@@ -9,55 +9,64 @@
 import Cocoa
 import Quartz
 
-class ImageItem: NSObject, IKImageBrowserItem {
-    let path: String
+class ImageItem: NSObject {
+    let photo: Photo
+    var image: NSImage?
     
-    init(path: String) {
-        self.path = path
+    init(photo: Photo) {
+        self.photo = photo
     }
     
     override func imageRepresentationType() -> String! {
-        return IKImageBrowserPathRepresentationType
+        return IKImageBrowserNSImageRepresentationType
     }
     
     override func imageRepresentation() -> AnyObject! {
-        return path
+        if let loadedImage = self.image {
+            return loadedImage
+        }
+        else {
+            image = NSImage(data: photo.thumbnailData())!
+            return image!
+        }
     }
     
     override func imageUID() -> String! {
-        return path
+        return photo.UID()
     }
 }
 
-class ImageBrowserController: NSObject, IKImageBrowserDataSource {
+class ImageBrowserController: NSObject {
     
-    override init() {}
-    
-    @IBOutlet var window: NSWindow?
     @IBOutlet var imageBrowser: IKImageBrowserView?
-    var imageSource: DirectoryImagesSource?
+    var photoCollection: PhotoCollection?
     
     override func numberOfItemsInImageBrowser(aBrowser: IKImageBrowserView!) -> Int {
-        if imageSource == nil {
-            return Int(imageSource!.imageCount())
-        }
-        return 0
+        return Int(photoCollection!.count())
     }
     
+    
     override func imageBrowser(aBrowser: IKImageBrowserView!, itemAtIndex index: Int) -> AnyObject! {
-        
+        photoCollection!.seekTo(Int64(index));
+        let photo = photoCollection!.currentPhoto()!
+        return ImageItem(photo: photo)
     }
-
-    @IBAction func loadPicturesFromDirectory(sender: AnyObject) {
+    
+    @IBAction func loadPicturesFromDirectory(senderView: NSView) {
         let panel = NSOpenPanel()
         panel.canChooseDirectories = true
         panel.canChooseFiles = false
-        panel.beginSheetModalForWindow(window!, completionHandler: {(result: Int) in ()
+        panel.beginSheetModalForWindow(senderView.window!, completionHandler: {(result: Int) in ()
             if result == NSOKButton {
                 let selection = panel.URL!.path!
-                self.imageSource = DirectoryImagesSource(rootDirectory: selection)
+                self.photoCollection = DirectoryPhotoCollection(rootDirectory: selection)
                 self.imageBrowser!.reloadData()
             }
         })
+    }
+    
+    @IBAction func setZoomFactor(slider: NSSlider) {
+        let value = (slider.doubleValue as Double - slider.minValue) / (slider.maxValue - slider.minValue)
+        imageBrowser!.setZoomValue(Float(value))
     }
 }

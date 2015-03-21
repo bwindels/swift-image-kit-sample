@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0E448E1ABD917900251BB1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0E448D1ABD917900251BB1 /* Photo.swift */; };
+		0F19E4211ABB4AFA00D3141C /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F791B001AB5FFB90092B3A8 /* Quartz.framework */; };
+		0F19E4231ABB4B0200D3141C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F19E4221ABB4B0200D3141C /* QuartzCore.framework */; };
+		0F19E4251ABB4B1500D3141C /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F19E4241ABB4B1500D3141C /* AppKit.framework */; };
 		0F791AFD1AB5E8590092B3A8 /* ImageBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F791AFC1AB5E8590092B3A8 /* ImageBrowserController.swift */; };
-		0F791AFF1AB5E8A80092B3A8 /* DirectoryImagesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F791AFE1AB5E8A80092B3A8 /* DirectoryImagesSource.swift */; };
+		0F791AFF1AB5E8A80092B3A8 /* DirectoryPhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F791AFE1AB5E8A80092B3A8 /* DirectoryPhotoCollection.swift */; };
 		0F96F2541AB8F24D00B2B18A /* foo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F96F2531AB8F24D00B2B18A /* foo.xib */; };
 		0FF580B31AB39FEF000A5348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF580B21AB39FEF000A5348 /* AppDelegate.swift */; };
 		0FF580B51AB39FEF000A5348 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF580B41AB39FEF000A5348 /* Images.xcassets */; };
@@ -27,8 +31,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F0E448D1ABD917900251BB1 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		0F19E4221ABB4B0200D3141C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0F19E4241ABB4B1500D3141C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		0F791AFC1AB5E8590092B3A8 /* ImageBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBrowserController.swift; sourceTree = "<group>"; };
-		0F791AFE1AB5E8A80092B3A8 /* DirectoryImagesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryImagesSource.swift; sourceTree = "<group>"; };
+		0F791AFE1AB5E8A80092B3A8 /* DirectoryPhotoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryPhotoCollection.swift; sourceTree = "<group>"; };
 		0F791B001AB5FFB90092B3A8 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		0F791B021AB5FFEA0092B3A8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0F96F2531AB8F24D00B2B18A /* foo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = foo.xib; sourceTree = "<group>"; };
@@ -47,6 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F19E4251ABB4B1500D3141C /* AppKit.framework in Frameworks */,
+				0F19E4231ABB4B0200D3141C /* QuartzCore.framework in Frameworks */,
+				0F19E4211ABB4AFA00D3141C /* Quartz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,10 +73,13 @@
 		0FF580A41AB39FEF000A5348 = {
 			isa = PBXGroup;
 			children = (
+				0F19E4241ABB4B1500D3141C /* AppKit.framework */,
+				0F19E4221ABB4B0200D3141C /* QuartzCore.framework */,
 				0F96F2531AB8F24D00B2B18A /* foo.xib */,
 				0F791B021AB5FFEA0092B3A8 /* Cocoa.framework */,
 				0F791B001AB5FFB90092B3A8 /* Quartz.framework */,
-				0F791AFE1AB5E8A80092B3A8 /* DirectoryImagesSource.swift */,
+				0F791AFE1AB5E8A80092B3A8 /* DirectoryPhotoCollection.swift */,
+				0F0E448D1ABD917900251BB1 /* Photo.swift */,
 				0F791AFC1AB5E8590092B3A8 /* ImageBrowserController.swift */,
 				0FF580AF1AB39FEF000A5348 /* pictures2 */,
 				0FF580C01AB39FEF000A5348 /* pictures2Tests */,
@@ -219,8 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F0E448E1ABD917900251BB1 /* Photo.swift in Sources */,
 				0F791AFD1AB5E8590092B3A8 /* ImageBrowserController.swift in Sources */,
-				0F791AFF1AB5E8A80092B3A8 /* DirectoryImagesSource.swift in Sources */,
+				0F791AFF1AB5E8A80092B3A8 /* DirectoryPhotoCollection.swift in Sources */,
 				0FF580B31AB39FEF000A5348 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
