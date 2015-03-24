@@ -671,10 +671,10 @@
         <window title="pictures2" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="661" height="459"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="661" height="459"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Rg-7y-qZB">
@@ -687,16 +687,26 @@
                             <action selector="loadPicturesFromDirectory:" target="0Yq-ER-oi4" id="ZEs-se-rxr"/>
                         </connections>
                     </button>
+                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BhV-Ha-bsF">
+                        <rect key="frame" x="504" y="22" width="139" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="135" id="OQM-1h-oCj"/>
+                        </constraints>
+                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="F9U-2t-BPR"/>
+                        <connections>
+                            <action selector="setZoomFactor:" target="0Yq-ER-oi4" id="Tsy-Ey-cma"/>
+                        </connections>
+                    </slider>
                     <scrollView horizontalLineScroll="140.5" horizontalPageScroll="10" verticalLineScroll="122" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dY5-Mj-YSb">
-                        <rect key="frame" x="-1" y="61" width="482" height="300"/>
+                        <rect key="frame" x="-1" y="61" width="663" height="399"/>
                         <clipView key="contentView" copiesOnScroll="NO" id="CWz-er-i1e">
                             <rect key="frame" x="1" y="1" width="166" height="79"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <ikImageBrowserView autoresizesSubviews="NO" fixedFrame="YES" zoomValue="0.5" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tRN-gV-3U3">
+                                <ikImageBrowserView autoresizesSubviews="NO" fixedFrame="YES" zoomValue="0.55884909629821777" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tRN-gV-3U3">
                                     <rect key="frame" x="0.0" y="110" width="480" height="4392"/>
                                     <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
-                                    <size key="cellSize" width="102" height="102"/>
+                                    <size key="cellSize" width="148" height="148"/>
                                     <connections>
                                         <outlet property="dataSource" destination="0Yq-ER-oi4" id="T15-En-E6k"/>
                                     </connections>
@@ -707,18 +717,11 @@
                             <rect key="frame" x="1" y="80" width="166" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="0.026868588177821229" horizontal="NO" id="2or-ib-RiK">
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="0.97747183979974972" horizontal="NO" id="2or-ib-RiK">
                             <rect key="frame" x="167" y="1" width="15" height="79"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <slider verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BhV-Ha-bsF">
-                        <rect key="frame" x="323" y="22" width="139" height="20"/>
-                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="F9U-2t-BPR"/>
-                        <connections>
-                            <action selector="setZoomFactor:" target="0Yq-ER-oi4" id="Tsy-Ey-cma"/>
-                        </connections>
-                    </slider>
                 </subviews>
                 <constraints>
                     <constraint firstItem="5Rg-7y-qZB" firstAttribute="top" secondItem="dY5-Mj-YSb" secondAttribute="bottom" constant="20" id="5oZ-nn-1ZW"/>
@@ -731,6 +734,7 @@
                     <constraint firstAttribute="bottom" secondItem="5Rg-7y-qZB" secondAttribute="bottom" constant="20" id="wzA-R8-tXD"/>
                 </constraints>
             </view>
+            <point key="canvasLocation" x="185.5" y="239.5"/>
         </window>
         <customObject id="0Yq-ER-oi4" customClass="ImageBrowserController" customModule="pictures2" customModuleProvider="target">
             <connections>

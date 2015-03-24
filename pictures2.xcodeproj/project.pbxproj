@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0F0E448E1ABD917900251BB1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0E448D1ABD917900251BB1 /* Photo.swift */; };
-		0F19E4211ABB4AFA00D3141C /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F791B001AB5FFB90092B3A8 /* Quartz.framework */; };
-		0F19E4231ABB4B0200D3141C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F19E4221ABB4B0200D3141C /* QuartzCore.framework */; };
-		0F19E4251ABB4B1500D3141C /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F19E4241ABB4B1500D3141C /* AppKit.framework */; };
+		0F0F47F71AC17F56006FEFE4 /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0F47F61AC17F56006FEFE4 /* libleveldb.a */; };
 		0F791AFD1AB5E8590092B3A8 /* ImageBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F791AFC1AB5E8590092B3A8 /* ImageBrowserController.swift */; };
 		0F791AFF1AB5E8A80092B3A8 /* DirectoryPhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F791AFE1AB5E8A80092B3A8 /* DirectoryPhotoCollection.swift */; };
 		0F96F2541AB8F24D00B2B18A /* foo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F96F2531AB8F24D00B2B18A /* foo.xib */; };
+		0FA6BB1E1ABD986E00D2177F /* LevelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA6BB1D1ABD986E00D2177F /* LevelDB.swift */; };
+		0FABCDBE1ABDC46F0066CDBC /* ExifParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FABCDBD1ABDC46F0066CDBC /* ExifParser.swift */; };
 		0FF580B31AB39FEF000A5348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF580B21AB39FEF000A5348 /* AppDelegate.swift */; };
 		0FF580B51AB39FEF000A5348 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF580B41AB39FEF000A5348 /* Images.xcassets */; };
 		0FF580B81AB39FEF000A5348 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF580B61AB39FEF000A5348 /* MainMenu.xib */; };
@@ -32,13 +32,27 @@
 
 /* Begin PBXFileReference section */
 		0F0E448D1ABD917900251BB1 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		0F19E4221ABB4B0200D3141C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		0F19E4241ABB4B1500D3141C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0F0F47E81AC17F4C006FEFE4 /* c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c.h; sourceTree = "<group>"; };
+		0F0F47E91AC17F4C006FEFE4 /* cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cache.h; sourceTree = "<group>"; };
+		0F0F47EA1AC17F4C006FEFE4 /* comparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = comparator.h; sourceTree = "<group>"; };
+		0F0F47EB1AC17F4C006FEFE4 /* db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = db.h; sourceTree = "<group>"; };
+		0F0F47EC1AC17F4C006FEFE4 /* dumpfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dumpfile.h; sourceTree = "<group>"; };
+		0F0F47ED1AC17F4C006FEFE4 /* env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = env.h; sourceTree = "<group>"; };
+		0F0F47EE1AC17F4C006FEFE4 /* filter_policy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filter_policy.h; sourceTree = "<group>"; };
+		0F0F47EF1AC17F4C006FEFE4 /* iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iterator.h; sourceTree = "<group>"; };
+		0F0F47F01AC17F4C006FEFE4 /* options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = options.h; sourceTree = "<group>"; };
+		0F0F47F11AC17F4C006FEFE4 /* slice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slice.h; sourceTree = "<group>"; };
+		0F0F47F21AC17F4C006FEFE4 /* status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = status.h; sourceTree = "<group>"; };
+		0F0F47F31AC17F4C006FEFE4 /* table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = table.h; sourceTree = "<group>"; };
+		0F0F47F41AC17F4C006FEFE4 /* table_builder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = table_builder.h; sourceTree = "<group>"; };
+		0F0F47F51AC17F4C006FEFE4 /* write_batch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = write_batch.h; sourceTree = "<group>"; };
+		0F0F47F61AC17F56006FEFE4 /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libleveldb.a; sourceTree = "<group>"; };
+		0F0F47F81AC1803E006FEFE4 /* pictures2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pictures2-Bridging-Header.h"; sourceTree = "<group>"; };
 		0F791AFC1AB5E8590092B3A8 /* ImageBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBrowserController.swift; sourceTree = "<group>"; };
 		0F791AFE1AB5E8A80092B3A8 /* DirectoryPhotoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryPhotoCollection.swift; sourceTree = "<group>"; };
-		0F791B001AB5FFB90092B3A8 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
-		0F791B021AB5FFEA0092B3A8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0F96F2531AB8F24D00B2B18A /* foo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = foo.xib; sourceTree = "<group>"; };
+		0FA6BB1D1ABD986E00D2177F /* LevelDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDB.swift; sourceTree = "<group>"; };
+		0FABCDBD1ABDC46F0066CDBC /* ExifParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExifParser.swift; sourceTree = "<group>"; };
 		0FF580AD1AB39FEF000A5348 /* pictures2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictures2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF580B11AB39FEF000A5348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF580B21AB39FEF000A5348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,9 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F19E4251ABB4B1500D3141C /* AppKit.framework in Frameworks */,
-				0F19E4231ABB4B0200D3141C /* QuartzCore.framework in Frameworks */,
-				0F19E4211ABB4AFA00D3141C /* Quartz.framework in Frameworks */,
+				0F0F47F71AC17F56006FEFE4 /* libleveldb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,14 +82,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F0F47E71AC17F4C006FEFE4 /* leveldb */ = {
+			isa = PBXGroup;
+			children = (
+				0F0F47E81AC17F4C006FEFE4 /* c.h */,
+				0F0F47E91AC17F4C006FEFE4 /* cache.h */,
+				0F0F47EA1AC17F4C006FEFE4 /* comparator.h */,
+				0F0F47EB1AC17F4C006FEFE4 /* db.h */,
+				0F0F47EC1AC17F4C006FEFE4 /* dumpfile.h */,
+				0F0F47ED1AC17F4C006FEFE4 /* env.h */,
+				0F0F47EE1AC17F4C006FEFE4 /* filter_policy.h */,
+				0F0F47EF1AC17F4C006FEFE4 /* iterator.h */,
+				0F0F47F01AC17F4C006FEFE4 /* options.h */,
+				0F0F47F11AC17F4C006FEFE4 /* slice.h */,
+				0F0F47F21AC17F4C006FEFE4 /* status.h */,
+				0F0F47F31AC17F4C006FEFE4 /* table.h */,
+				0F0F47F41AC17F4C006FEFE4 /* table_builder.h */,
+				0F0F47F51AC17F4C006FEFE4 /* write_batch.h */,
+			);
+			path = leveldb;
+			sourceTree = "<group>";
+		};
 		0FF580A41AB39FEF000A5348 = {
 			isa = PBXGroup;
 			children = (
-				0F19E4241ABB4B1500D3141C /* AppKit.framework */,
-				0F19E4221ABB4B0200D3141C /* QuartzCore.framework */,
+				0FABCDBD1ABDC46F0066CDBC /* ExifParser.swift */,
+				0FA6BB1D1ABD986E00D2177F /* LevelDB.swift */,
 				0F96F2531AB8F24D00B2B18A /* foo.xib */,
-				0F791B021AB5FFEA0092B3A8 /* Cocoa.framework */,
-				0F791B001AB5FFB90092B3A8 /* Quartz.framework */,
 				0F791AFE1AB5E8A80092B3A8 /* DirectoryPhotoCollection.swift */,
 				0F0E448D1ABD917900251BB1 /* Photo.swift */,
 				0F791AFC1AB5E8590092B3A8 /* ImageBrowserController.swift */,
@@ -103,6 +134,7 @@
 				0FF580B41AB39FEF000A5348 /* Images.xcassets */,
 				0FF580B61AB39FEF000A5348 /* MainMenu.xib */,
 				0FF580B01AB39FEF000A5348 /* Supporting Files */,
+				0F0F47F81AC1803E006FEFE4 /* pictures2-Bridging-Header.h */,
 			);
 			path = pictures2;
 			sourceTree = "<group>";
@@ -110,6 +142,8 @@
 		0FF580B01AB39FEF000A5348 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0F0F47F61AC17F56006FEFE4 /* libleveldb.a */,
+				0F0F47E71AC17F4C006FEFE4 /* leveldb */,
 				0FF580B11AB39FEF000A5348 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -232,10 +266,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FABCDBE1ABDC46F0066CDBC /* ExifParser.swift in Sources */,
 				0F0E448E1ABD917900251BB1 /* Photo.swift in Sources */,
 				0F791AFD1AB5E8590092B3A8 /* ImageBrowserController.swift in Sources */,
 				0F791AFF1AB5E8A80092B3A8 /* DirectoryPhotoCollection.swift in Sources */,
 				0FF580B31AB39FEF000A5348 /* AppDelegate.swift in Sources */,
+				0FA6BB1E1ABD986E00D2177F /* LevelDB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,11 +386,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					leveldb/include/,
+				);
 				INFOPLIST_FILE = pictures2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/leveldb",
+					"$(PROJECT_DIR)/pictures2",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "pictures2/pictures2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -362,11 +411,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					leveldb/include/,
+				);
 				INFOPLIST_FILE = pictures2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/leveldb",
+					"$(PROJECT_DIR)/pictures2",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "pictures2/pictures2-Bridging-Header.h";
 			};
 			name = Release;
 		};
