@@ -52,24 +52,24 @@ class DirectoryPhotoCollection: PhotoCollection {
         if cachedCount == nil {
             reset()
             var count:UInt64 = 0
-            continueTreeIteration({ (_: String) -> Bool in
+            continueTreeIteration { (_) in
                 ++count
                 return true
-            })
+            }
             self.cachedCount = count
         }
         return cachedCount!
     }
-    
+    //TODO: revise this code
     func seekTo(offset: Int64) {
         if currentOffset != offset {
             if currentOffset > offset {
                 reset()
             }
             if offset > 0 {
-                continueTreeIteration({ (_: String) -> Bool in
+                continueTreeIteration { (_) in
                     return (self.currentOffset + 1) < offset
-                })
+                }
             }
         }
     }
@@ -82,9 +82,9 @@ class DirectoryPhotoCollection: PhotoCollection {
         if enumerator == nil {
             reset()
         }
-        continueTreeIteration({ (path: String) -> Bool in
+        continueTreeIteration { (_) in
             return false
-        })
+        }
         return _currentPhoto
     }
     
